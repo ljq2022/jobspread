@@ -40,7 +40,6 @@ export const jobDetailsStyles = {
   nextStepButton: {
     outline: "none",
     border: "none",
-    width: "100%",
     height: 38,
     marginTop: 17,
     color: Colors.white,
