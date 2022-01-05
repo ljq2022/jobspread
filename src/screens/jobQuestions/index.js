@@ -19,7 +19,7 @@ export const JobQuestions = () => {
     await axios.post(AIRTABLE_API_URL, bodyParameters, config);
     Swal.fire({
       title: "Success",
-      text: "Your job has been posted to 10+ job boards.",
+      text: "Your job has been posted to 10+ job boards. We will email and text you about new candidate applications.",
       icon: "success",
       confirmButtonText: "Home",
       preConfirm: () => {
