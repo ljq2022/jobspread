@@ -1,9 +1,10 @@
 import { Field, Form, Formik } from "formik";
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { jobDetailValidationSchema } from "./validator";
 import ValidationError from "../../sharedComponents/validationError";
 import { jobDetailsStyles } from "../styles";
+import firebase from "../../firebaseConfig";
 
 const INITIAL_VALUES = {
   jobType: "NA",
@@ -11,6 +12,13 @@ const INITIAL_VALUES = {
 };
 export const JobDetails = () => {
   const history = useHistory();
+
+  useEffect(() => {
+    const user = firebase.auth().currentUser;
+    if (!user) {
+      history.push("/login");
+    }
+  }, []);
 
   const handleSubmit = async (formVals) => {
     history.push("/description", formVals);

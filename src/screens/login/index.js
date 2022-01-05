@@ -82,6 +82,16 @@ export const Login = () => {
                   {errorMessage}
                 </label>
               )}
+              <a
+                style={{
+                  color: Colors.blue,
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                }}
+                onClick={() => history.push("/register")}
+              >
+                New user? Click here.
+              </a>
             </div>
           </Form>
         )}

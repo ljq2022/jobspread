@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 
 import { jobDetailsStyles } from "../styles";
@@ -6,6 +6,7 @@ import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { EditorState } from "draft-js";
 import { convertToHTML } from "draft-convert";
+import firebase from "../../firebaseConfig";
 
 export const JobDescription = () => {
   const history = useHistory();
@@ -19,6 +20,14 @@ export const JobDescription = () => {
       ...state,
     });
   };
+
+  useEffect(() => {
+    const user = firebase.auth().currentUser;
+    if (!user) {
+      history.push("/login");
+    }
+  }, []);
+
   return (
     <div style={{ ...jobDetailsStyles.outerContainer, paddingLeft: 5 }}>
       <label style={jobDetailsStyles.largerTitle}>Job Description</label>

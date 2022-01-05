@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 
 import { jobDetailsStyles } from "../styles";
@@ -9,6 +9,7 @@ import { validate } from "./validator";
 import axios from "axios";
 import ValidationError from "../../sharedComponents/validationError";
 import Swal from "sweetalert2";
+import firebase from "../../firebaseConfig";
 
 export const JobQuestions = () => {
   const history = useHistory();
@@ -27,6 +28,14 @@ export const JobQuestions = () => {
       },
     });
   };
+
+  useEffect(() => {
+    const user = firebase.auth().currentUser;
+    if (!user) {
+      history.push("/login");
+    }
+  }, []);
+
   return (
     <div
       style={{
