@@ -18,4 +18,5 @@ export const jobDetailValidationSchema = yup.object({
       `Compensation upper bound must be greater than ${SALARY_MINIMUM}`
     ),
   employerEmail: yup.string().required("Please enter your email."),
+  phone: yup.string().required("Please enter your phone number."),
 });
