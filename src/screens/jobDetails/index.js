@@ -21,7 +21,8 @@ export const JobDetails = () => {
   }, []);
 
   const handleSubmit = async (formVals) => {
-    history.push("/description", formVals);
+    const user = firebase.auth().currentUser;
+    history.push("/description", { ...formVals, employerEmail: user.email });
   };
 
   return (
@@ -53,15 +54,6 @@ export const JobDetails = () => {
                 style={jobDetailsStyles.inputTextfield}
               />
               <ValidationError message={errors.location} />
-            </div>
-            <div style={jobDetailsStyles.inputSection}>
-              <label style={jobDetailsStyles.inputDesc}>Your Email</label>
-              <Field
-                name="employerEmail"
-                placeholder="johndoe@gmail.com"
-                style={jobDetailsStyles.inputTextfield}
-              />
-              <ValidationError message={errors.employerEmail} />
             </div>
             <div style={jobDetailsStyles.inputSection}>
               <label style={jobDetailsStyles.inputDesc}>Your Phone</label>
