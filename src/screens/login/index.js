@@ -82,7 +82,7 @@ export const Login = () => {
                   {errorMessage}
                 </label>
               )}
-              <a
+              <div
                 style={{
                   color: Colors.blue,
                   textDecoration: "underline",
@@ -91,7 +91,7 @@ export const Login = () => {
                 onClick={() => history.push("/register")}
               >
                 New user? Click here.
-              </a>
+              </div>
             </div>
           </Form>
         )}

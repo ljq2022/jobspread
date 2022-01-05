@@ -34,7 +34,7 @@ export const JobQuestions = () => {
     if (!user) {
       history.push("/login");
     }
-  }, []);
+  }, [history]);
 
   return (
     <div

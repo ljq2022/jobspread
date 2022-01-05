@@ -18,7 +18,7 @@ export const JobDetails = () => {
     if (!user) {
       history.push("/login");
     }
-  }, []);
+  }, [history]);
 
   const handleSubmit = async (formVals) => {
     const user = firebase.auth().currentUser;
