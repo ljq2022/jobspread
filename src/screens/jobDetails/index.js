@@ -46,6 +46,15 @@ export const JobDetails = () => {
               />
               <ValidationError message={errors.location} />
             </div>
+            <div style={jobDetailsStyles.inputSection}>
+              <label style={jobDetailsStyles.inputDesc}>Your Email</label>
+              <Field
+                name="employerEmail"
+                placeholder="johndoe@gmail.com"
+                style={jobDetailsStyles.inputTextfield}
+              />
+              <ValidationError message={errors.employerEmail} />
+            </div>
             <div style={jobDetailsStyles.checkBoxContainer}>
               <div
                 style={{
