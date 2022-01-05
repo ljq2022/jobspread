@@ -26,7 +26,7 @@ export const JobDescription = () => {
     if (!user) {
       history.push("/login");
     }
-  }, []);
+  }, [history]);
 
   return (
     <div style={{ ...jobDetailsStyles.outerContainer, paddingLeft: 5 }}>
