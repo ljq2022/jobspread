@@ -1,5 +1,3 @@
-import { CSSProperties } from "react";
-import Modal from "react-modal";
 import { Colors } from "./colors";
 
 export const Styles = {
